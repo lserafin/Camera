@@ -2,16 +2,31 @@ package com.develogical.camera;
 
 public class Camera {
 
+    private Sensor sensor;
+    private MemoryCard memoryCard;
+    private boolean isSwitchedOn;
+
+    public Camera(Sensor sensor,MemoryCard memoryCard) {
+        this.sensor = sensor;
+        this.memoryCard = memoryCard;
+        this.isSwitchedOn = false;
+    }
+
     public void pressShutter() {
-        // not implemented
+        if(isSwitchedOn) {
+            byte[] data = sensor.readData();
+            memoryCard.write(data);
+        }
     }
 
     public void powerOn() {
-        // not implemented
+        sensor.powerUp();
+        this.isSwitchedOn = true;
     }
 
     public void powerOff() {
-       // not implemented
+        sensor.powerDown();
+        this.isSwitchedOn = false;
     }
 }
 
