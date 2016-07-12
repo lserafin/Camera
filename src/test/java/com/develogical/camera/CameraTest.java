@@ -14,5 +14,21 @@ public class CameraTest {
 
          // write your test here
     }
+    @Test
+    public void switchingTheCameraOffPowersOffTheSensor() {
 
+        // write your test here
+    }
+
+    @Test
+    public void pressingTheShutterDoesNothingWhenPowerIsOff() {
+
+        // write your test here
+    }
+
+    @Test
+    public void pressingTheShutterWithPowerOnCopiesData() {
+
+        // write your test here
+    }
 }
